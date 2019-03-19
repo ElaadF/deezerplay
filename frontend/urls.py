@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from frontend import views
 
 app_name = 'frontend'
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('lol/', views.toto, name='toto'),
+    path('', views.toto, name='toto'),
 ]
