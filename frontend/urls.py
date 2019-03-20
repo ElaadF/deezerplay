@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from frontend import views
+from django.conf.urls import url
 
 app_name = 'frontend'
 
 urlpatterns = [
-    path('', views.toto, name='toto'),
+    path('', views.library, name='library'),
+    path('research', views.research, name='research'),
+    url(r'^research/researchById/$', views.researchParameters),
+    path('playlist', views.playlist, name='playlist'),
 ]
