@@ -16,24 +16,22 @@
    {% include "frontend/header.html"%}
    <body>
       <section>
-         <div id="slider" class="columns is-multiline is_mobile">
-            <br>
-            <div class="column"></div>
-            <div class="column">
-               <div align="center" class="options">
-                  <div class="option option-1">
 
-                     <span>Artist</span>
-                  </div>
-                  <div class="option option-2">
-                     <span>Track</span>
-                  </div>
-                  <div class="slider"></div>
-               </div>
-            </div>
-            <div class="column"></div>
-         </div>
          <div>
+           <div class="can-toggle can-toggle--size-large">
+             <input id="c" type="checkbox" onclick="myFunction()">
+             <label for="c">
+               <div class="can-toggle__switch" data-checked="Artist" data-unchecked="Track"></div>
+               <div class="can-toggle__label-text"></div>
+             </label>
+           </div>
+           <div id="artist" style="display:block">
+              Artist
+           </div>
+
+           <div id="track" style="display:none">
+  Track
+           </div>
          <br>
          <div id="alphabetics" align="center">
             <a href="/a">A</a> -
@@ -102,30 +100,22 @@
                </tr>
             </tbody>
          </table>
+
       </section>
       {% include 'frontend/footer.html' %}
    </body>
    <script>
-      const slider = document.querySelector('.slider')
-      const options = document.querySelectorAll('.option')
-
-
-      const clickHandler = (e) => {
-
-        if(e.currentTarget === options[0]) {
-            slider.style.left = '0'
-            options[1].style.color = '#626567'
-            options[0].style.color = '#fff'
-        } else {
-            slider.style.left=  `${slider.offsetWidth}px`
-            options[0].style.color = '#626567'
-            options[1].style.color = '#fff'
-        }
-
-      }
-
-      options.forEach(option => {
-        option.addEventListener('click', clickHandler)
-      })
+   function myFunction() {
+     var checkBox = document.getElementById("c");
+     var artist = document.getElementById("artist");
+      var track = document.getElementById("track");
+     if (checkBox.checked == true){
+       artist.style.display = "none";
+       track.style.display = "block";
+     } else {
+        artist.style.display = "block";
+        track.style.display = "none";
+     }
+   }
    </script>
 </html>
