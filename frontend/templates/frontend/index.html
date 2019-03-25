@@ -16,22 +16,22 @@
    {% include "frontend/header.html"%}
    <body>
       <section>
+         <div id="slider">
+            <div class="can-toggle can-toggle--size-large">
+               <input id="c" type="checkbox" onclick="myFunction()">
+               <label for="c">
+                  <div class="can-toggle__switch" data-checked="Artist" data-unchecked="Track"></div>
+                  <div class="can-toggle__label-text"></div>
+               </label>
+            </div>
+            <!-- <div id="artist" style="display:block">
+               Artist
+               </div>
 
-         <div>
-           <div class="can-toggle can-toggle--size-large">
-             <input id="c" type="checkbox" onclick="myFunction()">
-             <label for="c">
-               <div class="can-toggle__switch" data-checked="Artist" data-unchecked="Track"></div>
-               <div class="can-toggle__label-text"></div>
-             </label>
-           </div>
-           <div id="artist" style="display:block">
-              Artist
-           </div>
-
-           <div id="track" style="display:none">
-  Track
-           </div>
+               <div id="track" style="display:none">
+               Track
+               </div> -->
+         </div>
          <br>
          <div id="alphabetics" align="center">
             <a href="/a">A</a> -
@@ -59,63 +59,121 @@
             <a href="/w">W</a> -
             <a href="/x">X</a> -
             <a href="/y">Y</a> -
-            <a href="/z">Z</a>
+            <a href="/z">Z</a> <br>
+            <a href="/digit">0 - 9</a>
          </div>
-         <table>
-            <thead>
-               <tr>
-                  <th colspan="3">Rechercher par : </th>
-               </tr>
-               <tr>
-                  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-                     rel="stylesheet">
-                  <th>#</th>
-                  <th colspan="3">3 Résultats</th>
-               </tr>
-            </thead>
-            <tbody>
-               <tr>
-                  <td><img src="https://lastfm-img2.akamaized.net/i/u/64s/5aa48d2cb7af7b9cf2718622ede7212f.png"/></td>
-                  <td><b>Madonna</b><br>Like a virgin</td>
-                  <td>
-                     <i class="material-icons button2 library_music">library_music</i>
-                     <i class="material-icons button2 playlist_add">playlist_add</i>
-                  </td>
-               </tr>
-               <tr>
-                  <td><img src="https://lastfm-img2.akamaized.net/i/u/64s/5aa48d2cb7af7b9cf2718622ede7212f.png"/></td>
-                  <td><b>Luis Fonsi</b><br>Despacito</td>
-                  <td>
-                     <i class="material-icons button2 library_music">library_music</i>
-                     <i class="material-icons button2 playlist_add">playlist_add</i>
-                  </td>
-               </tr>
-               <tr>
-                  <td><img src="https://lastfm-img2.akamaized.net/i/u/64s/5aa48d2cb7af7b9cf2718622ede7212f.png"/></td>
-                  <td><b>Maître Gims</b><br>Bella</td>
-                  <td>
-                     <i class="material-icons button2 library_music">library_music</i>
-                     <i class="material-icons button2 playlist_add">playlist_add</i>
-                  </td>
-               </tr>
-            </tbody>
-         </table>
-
+         <div id="track" style="display:block">
+            <table >
+               <thead>
+                  <tr>
+                     <th colspan="3">Rechercher par : Track</th>
+                  </tr>
+                  <tr>
+                     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                        rel="stylesheet">
+                     <th>#</th>
+                     <th colspan="3">3 Résultats</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><img src="https://lastfm-img2.akamaized.net/i/u/64s/5aa48d2cb7af7b9cf2718622ede7212f.png"/></td>
+                     <td><b>Madonna</b><br>Like a virgin</td>
+                     <td>
+                        <i class="material-icons button2 library_music">library_music</i>
+                        <i class="material-icons button2 playlist_add">playlist_add</i>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><img src="https://lastfm-img2.akamaized.net/i/u/64s/5aa48d2cb7af7b9cf2718622ede7212f.png"/></td>
+                     <td><b>Luis Fonsi</b><br>Despacito</td>
+                     <td>
+                        <i class="material-icons button2 library_music">library_music</i>
+                        <i class="material-icons button2 playlist_add">playlist_add</i>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><img src="https://lastfm-img2.akamaized.net/i/u/64s/5aa48d2cb7af7b9cf2718622ede7212f.png"/></td>
+                     <td><b>Maître Gims</b><br>Bella</td>
+                     <td>
+                        <i class="material-icons button2 library_music">library_music</i>
+                        <i class="material-icons button2 playlist_add">playlist_add</i>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div id="artist" style="display:none">
+            <table>
+               <thead>
+                  <tr>
+                     <th colspan="3">Rechercher par : Artist</th>
+                  </tr>
+                  <tr>
+                     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                        rel="stylesheet">
+                     <th>#</th>
+                     <th colspan="3">3 Résultats</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><img src="https://lastfm-img2.akamaized.net/i/u/64s/5aa48d2cb7af7b9cf2718622ede7212f.png"/></td>
+                     <td><b>Madonna</b><br>Like a virgin</td>
+                     <td>
+                        <i class="material-icons button2 library_music">library_music</i>
+                        <i class="material-icons button2 playlist_add">playlist_add</i>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><img src="https://lastfm-img2.akamaized.net/i/u/64s/5aa48d2cb7af7b9cf2718622ede7212f.png"/></td>
+                     <td><b>Luis Fonsi</b><br>Despacito</td>
+                     <td>
+                        <i class="material-icons button2 library_music">library_music</i>
+                        <i class="material-icons button2 playlist_add">playlist_add</i>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><img src="https://lastfm-img2.akamaized.net/i/u/64s/5aa48d2cb7af7b9cf2718622ede7212f.png"/></td>
+                     <td><b>Maître Gims</b><br>Bella</td>
+                     <td>
+                        <i class="material-icons button2 library_music">library_music</i>
+                        <i class="material-icons button2 playlist_add">playlist_add</i>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div id="pagination">
+            <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+               <a class="pagination-previous">Previous</a>
+               <a class="pagination-next">Next page</a>
+               <ul class="pagination-list">
+                  <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+                  <li><span class="pagination-ellipsis">&hellip;</span></li>
+                  <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
+                  <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a></li>
+                  <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
+                  <li><span class="pagination-ellipsis">&hellip;</span></li>
+                  <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+               </ul>
+            </nav>
+         </div>
       </section>
       {% include 'frontend/footer.html' %}
    </body>
    <script>
-   function myFunction() {
-     var checkBox = document.getElementById("c");
-     var artist = document.getElementById("artist");
-      var track = document.getElementById("track");
-     if (checkBox.checked == true){
-       artist.style.display = "none";
-       track.style.display = "block";
-     } else {
-        artist.style.display = "block";
-        track.style.display = "none";
-     }
-   }
+      function myFunction() {
+        var checkBox = document.getElementById("c");
+        var artist = document.getElementById("artist");
+        var track = document.getElementById("track");
+        if (checkBox.checked == true){
+          artist.style.display = "block";
+          track.style.display = "none";
+        } else {
+           artist.style.display = "none";
+           track.style.display = "block";
+        }
+      }
    </script>
 </html>

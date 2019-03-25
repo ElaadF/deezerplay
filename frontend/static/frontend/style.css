@@ -257,18 +257,14 @@ img {
     color: #fff;
 }
 
-.slider {
-    position: absolute;
-    left: 0px;
-    height: 100%;
-    width: 50%;
-    background: #209cee;
-    z-index: 1;
-    border-radius: 50px;
-    -webkit-transition: .4s;
-    transition: .4s;
+#slider {
+  padding-top: 2rem;
+     margin: 0 auto;
+     width: 9%;
 }
 
-#slider {
-  margin-top: 2rem;
+#pagination {
+  width: 70rem;
+  margin: 0 auto;
+  padding-bottom: 2rem;
 }
