@@ -1,138 +1,131 @@
+
+
 <!DOCTYPE html>
 <html>
-  <head>
-    {% load static %}
+   <head>
+      {% load static %}
+      <link rel="stylesheet" href="{% static "frontend/style.css" %}">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Deezerplay</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+      <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+         rel="stylesheet">
+   </head>
+   {% include "frontend/header.html"%}
+   <body>
+      <section>
+         <div id="slider" class="columns is-multiline is_mobile">
+            <br>
+            <div class="column"></div>
+            <div class="column">
+               <div align="center" class="options">
+                  <div class="option option-1">
 
-<link rel="stylesheet" href="{% static "frontend/style.css" %}">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Deezerplay</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-  </head>
-  {% include "frontend/header.html"%}
-  <body>
-
-
-    <section>
-      <div id="slider" class="columns is-multiline is_mobile">  <br>
-<div class="column">
-</div>
-<div class="column">
-  <div align="center" class="options">
-  <div class="option option-1">
-  <span>Artist</span>
-  </div>
-  <div class="option option-2">
-  <span>Track</span>
-  </div>
-  <div class="slider"></div>
-  </div>
-</div>
-<div class="column">
-</div>
-</div>
-
-<div>
-      <br>
-
-      <div id="alphabetics" align="center">
-          <a href="https://jgthms.com">A</a> -
-          <a href="https://jgthms.com">B</a> -
-          <a href="https://jgthms.com">C</a> -
-          <a href="https://jgthms.com">D</a> -
-          <a href="https://jgthms.com">E</a> -
-          <a href="https://jgthms.com">F</a> -
-          <a href="https://jgthms.com">G</a> -
-          <a href="https://jgthms.com">H</a> -
-          <a href="https://jgthms.com">I</a> -
-          <a href="https://jgthms.com">K</a> -
-          <a href="https://jgthms.com">L</a> -
-          <a href="https://jgthms.com">M</a> <br>
-
-          <a href="https://jgthms.com">N</a> -
-          <a href="https://jgthms.com">O</a> -
-          <a href="https://jgthms.com">P</a> -
-          <a href="https://jgthms.com">Q</a> -
-          <a href="https://jgthms.com">R</a> -
-          <a href="https://jgthms.com">S</a> -
-          <a href="https://jgthms.com">T</a> -
-          <a href="https://jgthms.com">U</a> -
-          <a href="https://jgthms.com">V</a> <br>
-
-          <a href="https://jgthms.com">W</a> -
-          <a href="https://jgthms.com">X</a> -
-          <a href="https://jgthms.com">Y</a> -
-          <a href="https://jgthms.com">Z</a>
-      </div>
-      <table>
-    <thead>
-      <tr>
-        <th colspan="3">Rechercher par : </th>
-      </tr>
-      <tr><link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-        <th>#</th>
-        <th colspan="3">3 Résultats</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><img src="https://lastfm-img2.akamaized.net/i/u/64s/5aa48d2cb7af7b9cf2718622ede7212f.png"/></td>
-       <td><b>Madonna</b><br>Like a virgin</td>
-        <td>
-          <i class="material-icons button2 library_music">library_music</i>
-          <i class="material-icons button2 playlist_add">playlist_add</i>
-        </td>
-      </tr>
-      <tr>
-        <td><img src="https://lastfm-img2.akamaized.net/i/u/64s/5aa48d2cb7af7b9cf2718622ede7212f.png"/></td>
-        <td><b>Luis Fonsi</b><br>Despacito</td>
-        <td>
-          <i class="material-icons button2 library_music">library_music</i>
-          <i class="material-icons button2 playlist_add">playlist_add</i>
-        </td>
-      </tr>
-      <tr>
-        <td><img src="https://lastfm-img2.akamaized.net/i/u/64s/5aa48d2cb7af7b9cf2718622ede7212f.png"/></td>
-        <td><b>Maître Gims</b><br>Bella</td>
-        <td>
-         <i class="material-icons button2 library_music">library_music</i>
-          <i class="material-icons button2 playlist_add">playlist_add</i>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-{% include 'frontend/footer.html' %}
+                     <span>Artist</span>
+                  </div>
+                  <div class="option option-2">
+                     <span>Track</span>
+                  </div>
+                  <div class="slider"></div>
+               </div>
+            </div>
+            <div class="column"></div>
+         </div>
+         <div>
+         <br>
+         <div id="alphabetics" align="center">
+            <a href="/a">A</a> -
+            <a href="/b">B</a> -
+            <a href="/c">C</a> -
+            <a href="/d">D</a> -
+            <a href="/e">E</a> -
+            <a href="/f">F</a> -
+            <a href="/g">G</a> -
+            <a href="/h">H</a> -
+            <a href="/i">I</a> -
+            <a href="/j">J</a> -
+            <a href="/k">K</a> -
+            <a href="/l">L</a> -
+            <a href="/m">M</a> <br>
+            <a href="/n">N</a> -
+            <a href="/o">O</a> -
+            <a href="/p">P</a> -
+            <a href="/q">Q</a> -
+            <a href="/r">R</a> -
+            <a href="/s">S</a> -
+            <a href="/t">T</a> -
+            <a href="/u">U</a> -
+            <a href="/v">V</a> <br>
+            <a href="/w">W</a> -
+            <a href="/x">X</a> -
+            <a href="/y">Y</a> -
+            <a href="/z">Z</a>
+         </div>
+         <table>
+            <thead>
+               <tr>
+                  <th colspan="3">Rechercher par : </th>
+               </tr>
+               <tr>
+                  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                     rel="stylesheet">
+                  <th>#</th>
+                  <th colspan="3">3 Résultats</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td><img src="https://lastfm-img2.akamaized.net/i/u/64s/5aa48d2cb7af7b9cf2718622ede7212f.png"/></td>
+                  <td><b>Madonna</b><br>Like a virgin</td>
+                  <td>
+                     <i class="material-icons button2 library_music">library_music</i>
+                     <i class="material-icons button2 playlist_add">playlist_add</i>
+                  </td>
+               </tr>
+               <tr>
+                  <td><img src="https://lastfm-img2.akamaized.net/i/u/64s/5aa48d2cb7af7b9cf2718622ede7212f.png"/></td>
+                  <td><b>Luis Fonsi</b><br>Despacito</td>
+                  <td>
+                     <i class="material-icons button2 library_music">library_music</i>
+                     <i class="material-icons button2 playlist_add">playlist_add</i>
+                  </td>
+               </tr>
+               <tr>
+                  <td><img src="https://lastfm-img2.akamaized.net/i/u/64s/5aa48d2cb7af7b9cf2718622ede7212f.png"/></td>
+                  <td><b>Maître Gims</b><br>Bella</td>
+                  <td>
+                     <i class="material-icons button2 library_music">library_music</i>
+                     <i class="material-icons button2 playlist_add">playlist_add</i>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </section>
+      {% include 'frontend/footer.html' %}
+   </body>
+   <script>
+      const slider = document.querySelector('.slider')
+      const options = document.querySelectorAll('.option')
 
 
-  </body>
+      const clickHandler = (e) => {
 
-  <script>
-  const slider = document.querySelector('.slider')
-const options = document.querySelectorAll('.option')
+        if(e.currentTarget === options[0]) {
+            slider.style.left = '0'
+            options[1].style.color = '#626567'
+            options[0].style.color = '#fff'
+        } else {
+            slider.style.left=  `${slider.offsetWidth}px`
+            options[0].style.color = '#626567'
+            options[1].style.color = '#fff'
+        }
 
+      }
 
-const clickHandler = (e) => {
-
-    if(e.currentTarget === options[0]) {
-        slider.style.left = '0'
-        options[1].style.color = '#626567'
-        options[0].style.color = '#fff'
-    } else {
-        slider.style.left=  `${slider.offsetWidth}px`
-        options[0].style.color = '#626567'
-        options[1].style.color = '#fff'
-    }
-
-}
-
-options.forEach(option => {
-    option.addEventListener('click', clickHandler)
-})
-  </script>
+      options.forEach(option => {
+        option.addEventListener('click', clickHandler)
+      })
+   </script>
 </html>
