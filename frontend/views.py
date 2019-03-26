@@ -2,15 +2,18 @@ from django.shortcuts import render
 from django.http import HttpResponseNotAllowed, HttpResponse, HttpResponseBadRequest
 from django.contrib import messages
 from django.shortcuts import render, redirect, reverse
+from frontend.Word2Vec import all_list,pred_list
 
 # Create your views here.
 
 def library(request):
-    context = {"navbar" : "library"}
+    context = {"navbar" : "library", "library": all_list()}
+    print(all_list())
     return render(request, "frontend/index.html", context)
 
 def playlist(request):
     context = {"navbar" : "playlist"}
+    print(all_list())
     return render(request, "frontend/playlist.html", context)
 
 def research(request):
@@ -29,8 +32,6 @@ def researchParameters(request):
         messages.error(request, "Le groupe n'existe pas")
         return redirect('/research')
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
 
 # def get_url_image(artist, track, lastfm_key):
 #     params = {
