@@ -5,16 +5,12 @@ from django.shortcuts import render, redirect, reverse
 from frontend.Word2Vec import all_list,pred_list, track_dict, trj_meta
 
 
-
-# Create your views here.
-
-
 def library(request):
     context = {"navbar": "library", "track": all_list(), "artist": all_list()}
     return render(request, "frontend/index.html", context)
 
 
-def libraryByFilter(request):
+def library_by_filter(request):
     lst = all_list();
     track_lst = list()
     artist_lst = list()
@@ -39,13 +35,13 @@ def libraryByFilter(request):
     return render(request, "frontend/index.html", context)
 
 
-def libraryRecommandation(request):
+def library_recommandation(request):
     reco_lst = list()
     id = request.GET['id']
     if id is None:
         context = {"navbar": "library", "track": reco_lst, "artist": reco_lst}
         return render(request, "frontend/index.html", context)
-    id_lst = []
+    id_lst = list()
     id_lst.append(track_dict[id])
     reco_lst = pred_list(id_lst)
     context = {"navbar": "library", "track": reco_lst, "artist": reco_lst}
@@ -62,7 +58,7 @@ def research(request):
     return render(request, "frontend/research.html", context)
 
 
-def researchParameters(request):
+def research_parameters(request):
     lst = all_list()
     artist_lst = list()
     track_lst = list()

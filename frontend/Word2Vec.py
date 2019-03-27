@@ -97,7 +97,7 @@ index_app  = np.setdiff1d(range(100000),index_tst)
 play_app   = [corpus_num_track[i] for i in index_app]
 play_tst  = [corpus_num_track[i] for i in index_tst]
 
-hist=SkipGram_t.fit_generator(track_ns_generator(play_app,min_batch_size),200,5)
+hist=SkipGram_t.fit_generator(track_ns_generator(play_app,min_batch_size),200,10)
 
 # récupérations des positions des morceaux dans l'espace de projection
 vectors_tracks = SkipGram_t.get_weights()[0]

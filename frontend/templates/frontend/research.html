@@ -1,47 +1,52 @@
 <html>
 
-  <head>
-    {% load static %}
-
-    <link rel="stylesheet" href="{% static 'frontend/style.css' %}">
-    <link rel="stylesheet" href="{% static 'frontend/research.css' %}">
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Deezerplay</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-      <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'frontend/style.css' %}">
+        <link rel="stylesheet" href="{% static 'frontend/research.css' %}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Deezerplay</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet">
     </head>
-  {% include "frontend/header.html"%}
-  <body>
-    <form action="/research/researchById" method="get">
-      <div id="mainTitle"><h2 align="center" class="title is-2">Research</h2></div>
-      <div class="columns">
-        <div align="right" class="column">
-          <div class="field">
-            <div id="inputSearch" class="control">
-              <input name="artist" class="input is-primary" type="text" placeholder="Artist">
+    {% include "frontend/header.html"%}
+    <body>
+        <form action="/research/researchById" method="get">
+            <div id="mainTitle">
+                <h2 align="center" class="title is-2">Research</h2>
             </div>
-          </div>
-        </div>
-        <div class="column">
-          <div class="field">
-            <div id="inputSearch" class="control">
-              <input name="track" class="input is-primary" type="text" placeholder="Track">
+            <div class="columns">
+                <div align="right" class="column">
+                    <div class="field">
+                        <div id="inputSearch" class="control">
+                            <input name="artist" class="input is-primary" type="text" placeholder="Artist">
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <div id="inputSearch" class="control">
+                            <input name="track" class="input is-primary" type="text" placeholder="Track">
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div align="center">
-        <div alignclass="control">
-          <button type="submit" class="button is-link">Search</button>
-        </div>
-      </div>
-    </form>
-  </body>
-
-
-  {% include "frontend/footer.html"%}
+            <div align="center">
+                <div alignclass="control">
+                    <button type="submit" class="button is-link">Search</button>
+                </div>
+            </div>
+        </form>
+    </body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% include "frontend/footer.html"%}
 
 </html>
