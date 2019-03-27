@@ -80,11 +80,17 @@
                {% for elem in track|slice:":100" %}
                   <tr>
                      <td><img src="{{ elem.picture_medium }}"/></td>
-                     <td><b>{{ elem.title }}</b><br>{{ elem.name }}</td>
+                     <td><b>{{ elem.title }}</b><br>{{ elem.name }}<br>
+                      <audio controls="controls">
+                          <source src="{{ elem.preview }}" type="audio/mp3" />
+                          Votre navigateur n'est pas compatible
+                        </audio>
+                     </td>
                      <td>
-                         <a href="/recommendation?id={{ elem.id }}"><i class="material-icons button2 library_music">library_music</i></a>
+                         <a href="/recommendation?id={{ elem.y_id }}"><i class="material-icons button2 library_music">library_music</i></a>
                         <i class="material-icons button2 playlist_add">playlist_add</i>
                      </td>
+
                   </tr>
                {% endfor %}
                </tbody>
@@ -107,9 +113,15 @@
                   {% for elem in artist|slice:":100" %}
                   <tr>
                      <td><img src="{{ elem.picture_medium }}"/></td>
-                     <td><b>{{ elem.name }}</b><br>{{ elem.title }}</td>
+                     <td><b>{{ elem.name }}</b><br>{{ elem.title }}
+                     <br>
+                      <audio controls="controls">
+                          <source src="{{ elem.preview }}" type="audio/mp3" />
+                          Votre navigateur n'est pas compatible
+                        </audio>
+                     </td>
                      <td>
-                         <a href="/recommendation?id={{ elem.id }}"><i class="material-icons button2 library_music">library_music</i></a>
+                         <a href="/recommendation?id={{ elem.y_id }}"><i class="material-icons button2 library_music">library_music</i></a>
                         <i class="material-icons button2 playlist_add">playlist_add</i>
                      </td>
                   </tr>

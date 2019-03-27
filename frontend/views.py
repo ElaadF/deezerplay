@@ -10,7 +10,6 @@ from frontend.Word2Vec import all_list,pred_list, track_dict, trj_meta
 
 
 def library(request):
-    print(all_list())
     context = {"navbar": "library", "track": all_list(), "artist": all_list()}
     return render(request, "frontend/index.html", context)
 
@@ -47,10 +46,7 @@ def libraryRecommandation(request):
         context = {"navbar": "library", "track": reco_lst, "artist": reco_lst}
         return render(request, "frontend/index.html", context)
     id_lst = []
-    #print(track_dict)
-    print(id)
-    print('\n')
-    id_lst.append(trj_meta[id])
+    id_lst.append(track_dict[id])
     reco_lst = pred_list(id_lst)
     context = {"navbar": "library", "track": reco_lst, "artist": reco_lst}
     return render(request, "frontend/index.html", context)
@@ -77,20 +73,20 @@ def researchParameters(request):
         artist = request.GET['artist']
         if track != '':
             for dic in lst:
-                if dic['title'] == track and dic['name'] == artist:
+                if track.lower() in dic['title'].lower() and artist.lower() in dic['name'].lower():
                     track_lst.append(dic)
                     artist_lst.append(dic)
             context = {"navbar": "research", "track": track_lst, "artist": artist_lst}
             return render(request, "frontend/index.html", context)
         elif track != '':
             for dic in lst:
-                if dic['title'] == track:
+                if track.lower() in dic['title'].lower():
                     track_lst.append(dic)
             context = {"navbar": "research", "track": track_lst, "artist": track_lst}
             return render(request, "frontend/index.html", context)
         elif artist != '':
             for dic in lst:
-                if dic['name'] == artist:
+                if artist.lower() in dic['name'].lower():
                     artist_lst.append(dic)
             context = {"navbar": "research", "track": artist_lst, "artist": artist_lst}
             return render(request, "frontend/index.html", context)

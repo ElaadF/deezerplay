@@ -97,7 +97,7 @@ index_app  = np.setdiff1d(range(100000),index_tst)
 play_app   = [corpus_num_track[i] for i in index_app]
 play_tst  = [corpus_num_track[i] for i in index_tst]
 
-hist=SkipGram_t.fit_generator(track_ns_generator(play_app,min_batch_size),200,1)
+hist=SkipGram_t.fit_generator(track_ns_generator(play_app,min_batch_size),200,5)
 
 # récupérations des positions des morceaux dans l'espace de projection
 vectors_tracks = SkipGram_t.get_weights()[0]
@@ -182,11 +182,11 @@ def pred_list(seeds):
     lst = list()
     for i in range(len(pr)):
         lst.append(int(pr[i]))
-    return trj_meta.loc[lst, ["title","artist","preview","album", "deezer_id"]].values
+    return parse(trj_meta.loc[lst, ["title","artist","preview","album", "id_y"]].values)
 
 
 def all_list():
-    return parse(trj_meta[["title","artist","preview","album", "deezer_id"]].values)
+    return parse(trj_meta[["title","artist","preview","album", "id_y"]].values)
 
 
 def parse(all_list):
@@ -195,6 +195,8 @@ def parse(all_list):
     for i in range(len(lst)):
         dico = {}
         titre = lst[i, 0]
+        y_id = lst[i, 4]
+        preview = lst[i, 2]
         to_parse = str(lst[i, 1])
         to_parse = to_parse[1:-1]
         parsed = to_parse.split(", u")
@@ -204,7 +206,8 @@ def parse(all_list):
                 tmp = tmp[0].split(": ")
             dico[tmp[0].replace("'", "")] = tmp[1].replace("'", "")
         dico['title'] = titre
-        print(dico)
+        dico['y_id'] = y_id
+        dico['preview'] = preview
         lst_music.append(dico)
     return lst_music
 
