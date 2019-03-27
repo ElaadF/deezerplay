@@ -79,8 +79,8 @@ def researchParameters(request):
             for dic in lst:
                 if dic['title'] == track and dic['name'] == artist:
                     track_lst.append(dic)
-                    track_lst.append(dic)
-            context = {"navbar": "research", "track": track_lst, "artist": track_lst}
+                    artist_lst.append(dic)
+            context = {"navbar": "research", "track": track_lst, "artist": artist_lst}
             return render(request, "frontend/index.html", context)
         elif track != '':
             for dic in lst:
