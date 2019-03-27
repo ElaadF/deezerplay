@@ -22,7 +22,9 @@ app_name = 'frontend'
 
 urlpatterns = [
     path('', views.library, name='library'),
-    path('research', views.research, name='research'),
+    url(r'^filter/$', views.libraryByFilter, name='libraryByFilter'),
+    url(r'^recommendation/$', views.libraryRecommandation, name='libraryRecommandation'),
+    url(r'^research/$', views.research, name='research'),
     url(r'^research/researchById/$', views.researchParameters),
     path('playlist', views.playlist, name='playlist'),
 ]

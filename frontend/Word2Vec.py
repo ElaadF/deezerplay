@@ -97,7 +97,7 @@ index_app  = np.setdiff1d(range(100000),index_tst)
 play_app   = [corpus_num_track[i] for i in index_app]
 play_tst  = [corpus_num_track[i] for i in index_tst]
 
-hist=SkipGram_t.fit_generator(track_ns_generator(play_app,min_batch_size),200,5)
+hist=SkipGram_t.fit_generator(track_ns_generator(play_app,min_batch_size),200,1)
 
 # récupérations des positions des morceaux dans l'espace de projection
 vectors_tracks = SkipGram_t.get_weights()[0]
@@ -177,14 +177,36 @@ def test_predict_opt(leaf_size=10, metric='euclidean'):
     return np.sum(goodpred) / np.sum(nbpred)
 
 
-
 def pred_list(seeds):
     pr = predict_opt(seeds,25,vectors_tracks,kdt)
-    return trj_meta.loc(pr,["titre","artist","preview","album"]).values
+    lst = list()
+    for i in range(len(pr)):
+        lst.append(int(pr[i]))
+    return trj_meta.loc[lst, ["title","artist","preview","album", "deezer_id"]].values
+
 
 def all_list():
-    return trj_meta[["title","artist","preview","album"]].values
+    return parse(trj_meta[["title","artist","preview","album", "deezer_id"]].values)
 
+
+def parse(all_list):
+    lst = all_list
+    lst_music = list()
+    for i in range(len(lst)):
+        dico = {}
+        titre = lst[i, 0]
+        to_parse = str(lst[i, 1])
+        to_parse = to_parse[1:-1]
+        parsed = to_parse.split(", u")
+        for elem in parsed:
+            tmp = elem.split(": u")
+            if len(tmp) < 2:
+                tmp = tmp[0].split(": ")
+            dico[tmp[0].replace("'", "")] = tmp[1].replace("'", "")
+        dico['title'] = titre
+        print(dico)
+        lst_music.append(dico)
+    return lst_music
 
 
 
