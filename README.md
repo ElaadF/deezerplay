@@ -34,16 +34,10 @@ deactivate
 
 Virtualenv allows you to install python package independently from your system. You will need to activate every time the envrionnement before 
 
-2. Install Django    
+2. Install requierements    
 ```bash
-pip3 install django
+ pip3 install -r requirements.txt
 ```
-
-3. Install requests    
-```bash
-pip3 install requests
-```
-
 ## Run
 1. Activate envrionnement
 ```bash
