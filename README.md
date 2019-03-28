@@ -8,7 +8,7 @@
 + keras
 + tensorflow
 + pandas
-
++ sklearn
 
 ## Install
 
